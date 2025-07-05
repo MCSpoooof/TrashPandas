@@ -1,13 +1,13 @@
-package pandaPathing.commands;
+package pedroPathing.commands;
 
-import static pandaPathing.robot.RobotConstants.slideHighBasket;
+import static pedroPathing.robot.RobotConstants.slideHighBasket;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
-import pandaPathing.subsytem.Claw;
-import pandaPathing.subsytem.Lift;
-import pandaPathing.subsytem.Robot;
-import pandaPathing.util.Timer;
+import pedroPathing.subsystem.Claw;
+import pedroPathing.subsystem.Lift;
+import pedroPathing.subsystem.Robot;
+import pedroPathing.util.Timer;
 
 public class RaiseSlidesHighBasket extends CommandBase {
     private final Lift lift;

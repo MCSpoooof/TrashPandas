@@ -1,10 +1,10 @@
-package pandaPathing.subsytem;
+package pedroPathing.subsystem;
 
-import static pandaPathing.robot.RobotConstants.slideHighBasket;
-import static pandaPathing.robot.RobotConstants.slideHighChamber;
-import static pandaPathing.robot.RobotConstants.slidePark;
-import static pandaPathing.robot.RobotConstants.slideScoreHighBasket;
-import static pandaPathing.robot.RobotConstants.slideZero;
+import static pedroPathing.robot.RobotConstants.slideHighBasket;
+import static pedroPathing.robot.RobotConstants.slideHighChamber;
+import static pedroPathing.robot.RobotConstants.slidePark;
+import static pedroPathing.robot.RobotConstants.slideScoreHighBasket;
+import static pedroPathing.robot.RobotConstants.slideZero;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
@@ -14,9 +14,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-import pandaPathing.robot.RobotConstants;
-import pandaPathing.util.CachedMotor;
-import pandaPathing.util.PDFLController;
+import pedroPathing.robot.RobotConstants;
+import pedroPathing.util.CachedMotor;
+import pedroPathing.util.PDFLController;
 
 public class Lift extends SubsystemBase {
 

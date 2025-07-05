@@ -1,4 +1,4 @@
-package pandaPathing.robot;
+package pedroPathing.robot;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
-import pandaPathing.util.PDFLController;
+import pedroPathing.util.PDFLController;
 import java.util.List;
 
 @Config

@@ -1,4 +1,4 @@
-package pedroPathing.subsytem;
+package pedroPathing.subsystem;
 
 public class Robot {
     public enum RobotState {

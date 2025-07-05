@@ -2,9 +2,9 @@ package pedroPathing.commands;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
-import pedroPathing.subsytem.Claw;
-import pedroPathing.subsytem.Lift;
-import pedroPathing.subsytem.Robot;
+import pedroPathing.subsystem.Claw;
+import pedroPathing.subsystem.Lift;
+import pedroPathing.subsystem.Robot;
 import pedroPathing.util.Timer;
 
 public class Deposit extends CommandBase {

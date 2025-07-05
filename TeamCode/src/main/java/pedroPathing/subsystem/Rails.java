@@ -1,13 +1,13 @@
-package pandaPathing.subsytem;
+package pedroPathing.subsystem;
 
-import static pandaPathing.robot.RobotConstants.pitchDeposit;
-import static pandaPathing.robot.RobotConstants.pitchGrab;
-import static pandaPathing.robot.RobotConstants.pitchInRobot;
-import static pandaPathing.robot.RobotConstants.pitchSpecimen;
-import static pandaPathing.robot.RobotConstants.railLIn;
-import static pandaPathing.robot.RobotConstants.railLOut;
-import static pandaPathing.robot.RobotConstants.railRIn;
-import static pandaPathing.robot.RobotConstants.railROut;
+import static pedroPathing.robot.RobotConstants.pitchDeposit;
+import static pedroPathing.robot.RobotConstants.pitchGrab;
+import static pedroPathing.robot.RobotConstants.pitchInRobot;
+import static pedroPathing.robot.RobotConstants.pitchSpecimen;
+import static pedroPathing.robot.RobotConstants.railLIn;
+import static pedroPathing.robot.RobotConstants.railLOut;
+import static pedroPathing.robot.RobotConstants.railRIn;
+import static pedroPathing.robot.RobotConstants.railROut;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
