@@ -1,9 +1,6 @@
 package trashPandas.config.subsystems;
 
-import static trashPandas.config.core.RobotConstants.railLIn;
-import static trashPandas.config.core.RobotConstants.railLOut;
-import static trashPandas.config.core.RobotConstants.railRIn;
-import static trashPandas.config.core.RobotConstants.railROut;
+import static trashPandas.config.core.RobotConstants.*;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;

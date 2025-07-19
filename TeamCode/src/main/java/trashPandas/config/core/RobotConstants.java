@@ -73,7 +73,7 @@ public class RobotConstants {
 
     slideHighChamber = 607,
 
-    slideMaxSpecTele = 607,
+    slideMaxSpec = 607,
 
     slidePark = 490,
 

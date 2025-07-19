@@ -1,10 +1,6 @@
 package trashPandas.config.subsystems;
 
-import static trashPandas.config.core.RobotConstants.slideHighBasket;
-import static trashPandas.config.core.RobotConstants.slideHighChamber;
-import static trashPandas.config.core.RobotConstants.slidePark;
-import static trashPandas.config.core.RobotConstants.slideScoreHighBasket;
-import static trashPandas.config.core.RobotConstants.slideZero;
+import static trashPandas.config.core.RobotConstants.*;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
@@ -27,6 +23,7 @@ public class Lift extends SubsystemBase {
 
     public int target;
     public int pos;
+    private boolean up = false;
 
 
     public Lift(HardwareMap hardwareMap, Telemetry telemetry) {
@@ -40,7 +37,7 @@ public class Lift extends SubsystemBase {
         leftSlides.setDirection(DcMotor.Direction.FORWARD);
 
         rightSlides.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightSlides.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightSlides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         leftSlides.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         slideyController = new PDFLController(RobotConstants.p, RobotConstants.d, RobotConstants.f, RobotConstants.l);
@@ -57,7 +54,10 @@ public class Lift extends SubsystemBase {
 
         int slidePos = getPos();
 
-        slideyController.calculatePow(slidePos, target);
+        double p = slideyController.calculatePow(slidePos, target);
+        leftSlides.setPower(p);
+        rightSlides.setPower(p);
+
     }
 
     public void setTarget(int b) {
@@ -66,7 +66,7 @@ public class Lift extends SubsystemBase {
 
     public int getPos() {
         pos = rightSlides.getCurrentPosition();
-        return rightSlides.getCurrentPosition();
+        return pos;
     }
 
 
@@ -103,6 +103,7 @@ public class Lift extends SubsystemBase {
         telemetry.addData("Lift Pos: ", getPos());
         telemetry.addData("Lift Target: ", target);
     }
+
 
     @Override
     public void periodic() {

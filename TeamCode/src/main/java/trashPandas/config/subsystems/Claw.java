@@ -1,22 +1,6 @@
 package trashPandas.config.subsystems;
 
-import static trashPandas.config.core.RobotConstants.claw0;
-import static trashPandas.config.core.RobotConstants.claw180;
-import static trashPandas.config.core.RobotConstants.claw45;
-import static trashPandas.config.core.RobotConstants.claw45_2;
-import static trashPandas.config.core.RobotConstants.claw90;
-import static trashPandas.config.core.RobotConstants.clawClose;
-import static trashPandas.config.core.RobotConstants.clawOpen;
-import static trashPandas.config.core.RobotConstants.pitchDeposit;
-import static trashPandas.config.core.RobotConstants.pitchGrab;
-import static trashPandas.config.core.RobotConstants.pitchInRobot;
-import static trashPandas.config.core.RobotConstants.pitchSpecimen;
-import static trashPandas.config.core.RobotConstants.v4bDeposit;
-import static trashPandas.config.core.RobotConstants.v4bExtend;
-import static trashPandas.config.core.RobotConstants.v4bGrab;
-import static trashPandas.config.core.RobotConstants.v4bGrabSpec;
-import static trashPandas.config.core.RobotConstants.v4bScoreSpec;
-import static trashPandas.config.core.RobotConstants.v4bUp;
+import static trashPandas.config.core.RobotConstants.*;
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -134,7 +118,6 @@ public class Claw extends SubsystemBase {
         }
         Claw.v4bState = v4bState;
     }
-
     public void init() {
         setGrabState(GrabState.CLOSED);
         setRollState(RollState.ZERO);
@@ -147,6 +130,12 @@ public class Claw extends SubsystemBase {
         telemetry.addData("Claw Roll State: ", rollState);
         telemetry.addData("Claw Pitch State: ", pitchState);
         telemetry.addData("Claw V4B State: ", v4bState);
+    }
+    public void openClose() {
+        if (grabState == GrabState.OPEN)
+            setGrabState(GrabState.CLOSED);
+        else
+            setGrabState(GrabState.OPEN);
     }
 
     @Override
