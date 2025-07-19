@@ -38,25 +38,30 @@ public class FiveSpecAutoTest extends OpModeCommand {
                                 new FollowPath(robot.getFollower(), pushPosition1(), true).alongWith(
                                         new WaitCommand(500).andThen(
                                                 new InstantCommand(() -> {robot.getLift().toZero();})
-                                        )
-                                )
+                                        ))
                         ),
                         new FollowPath(robot.getFollower(), push1(), true),
                         new FollowPath(robot.getFollower(), pushPosition2(), true),
                         new FollowPath(robot.getFollower(), push2(), true),
                         new FollowPath(robot.getFollower(), pushPosition3(), true),
-                        new FollowPath(robot.getFollower(), push3(), true),
-                        new FollowPath(robot.getFollower(), finalPush(), true),
-                        new TillTValue(robot, 0.2).andThen(
+                        new FollowPath(robot.getFollower(), finalPush(), true).alongWith(
+                            new TillTValue(robot, 0.2).andThen(
                                 new InstantCommand(() -> {
                                     robot.getClaw().setV4BState(Claw.V4BState.GRAB_SPECIMEN_V4B);
                                     robot.getClaw().setPitchState(Claw.PitchState.SPECIMEN);
                                     robot.getClaw().setRollState(Claw.RollState.ZERO);
-                                })
+                                }))),
+                        new FollowPath(robot.getFollower(), push3(), true),
+                        new InstantCommand(() -> {robot.getClaw().setGrabState(Claw.GrabState.CLOSED);}),
+                        new WaitCommand(300),
+                        new FollowPath(robot.getFollower(), hang1(), true).alongWith(
+                                new InstantCommand(() -> {robot.getLift().toChamber();})
                         )
 
 
-                )
+
+
+                        )
         );
     }
 }
